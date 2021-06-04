@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: rgb(78, 78, 78);
+}
+div {
+  display: inline-block;
+}
+div.commu {
+  width: 100%;
+  text-align: right;
+  font-weight: bold;
+  padding-right: 20px;
+  background-color: rgb(78, 78, 78);
+}
+div#tb1,
+div#tb2,
+div#tb3 {
+  padding: 0px 5px;
+  color: whitesmoke;
+}
+h1 {
+  background-color: rgba(0, 0, 0, 0.726);
+  color: whitesmoke;
+  padding: 15px 25px;
+}
