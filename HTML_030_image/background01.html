@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="../reset.css" />
+    <style>
+      div.container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      div.container div {
+        width: 500px;
+        height: 500px;
+        margin: 10px;
+        border: 2px solid salmon;
+        /*
+            hover 속성이 적용된 tag에 적용함
+            변화에 있어 딜레이를 줌
+        */
+        transition: 1s;
+      }
+      div.b1 {
+        background-image: url("image_1.jpg");
+        /* 
+            background-size 를 지정하면 box 크기에 비례하여 표현가능
+            background-size: width height; 식
+         */
+        background-size: 0.1% 100%;
+      }
+      div.b2 {
+        background-image: url("image_2.jpg");
+        background-size: 100% 0.1%;
+      }
+      div.b3 {
+        background-image: url("image_3.jpg");
+        background-size: 10% 10%;
+      }
+      div.b4 {
+        background-image: url("image_4.jpg");
+        background-size: 150% 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div.b4 img {
+        border-radius: 50%;
+      }
+      div.b5 {
+        background-image: url("image_5.jpg");
+        background-size: 0.1% 1%;
+      }
+      div.b6 {
+        background-image: url("image_1.jpg");
+        background-size: 0.1% 1%;
+        background-repeat: no-repeat;
+      }
+      div.b7 {
+        background-image: url("image_2.jpg");
+        background-size: 50% 50%;
+        background-repeat: no-repeat;
+        /* background-position: x축 y축 */
+        background-position: 50% 50%;
+      }
+      /*
+        background-image의 width를 20%로 설정하고
+        hover가 ehlaus 다시 width를 100%설정해 둔다
+      */
+      div.b8 {
+        background-image: url("image_3.jpg");
+        background-size: 50% 50%;
+        background-repeat: no-repeat;
+        /* css3에서 지원되는 속성 */
+        background-position: center;
+      }
+      div.b8:hover {
+        background-size: 100% 100%;
+      }
+      div.b9 {
+        background-image: url("image_4.jpg");
+        background-size: 100% 100%;
+      }
+      div.b9:hover {
+        background-size: 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="b1">우리나라</div>
+      <div class="b2">대한민국</div>
+      <div class="b3">나의조국</div>
+      <div class="b4"><img src="image_1.jpg" width="50%" />다케시마</div>
+      <div class="b5">아닙니다</div>
+      <div class="b6">동해독도</div>
+      <div class="b7">맞습니다</div>
+      <div class="b8">애국만이</div>
+      <div class="b9">살길이다</div>
+    </div>
+  </body>
+</html>
