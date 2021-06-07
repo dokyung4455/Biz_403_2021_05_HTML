@@ -1,0 +1,86 @@
+nav#main_nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: greenyellow;
+  display: flex;
+}
+nav#main_nav h1 {
+  color: whitesmoke;
+  font-size: 40px;
+  font-weight: 900;
+  padding: 12px 5px 5px 20px;
+}
+nav#main_nav ul {
+  /* container를 flex로 하고 child의 margin-left를 auto로 설정하면 flex box내에서 오른쪽 정렬이 된다. */
+  margin-left: auto;
+  list-style: none;
+  display: flex;
+}
+nav#main_nav li {
+  padding: 22px 15px 20px 15px;
+  cursor: pointer;
+}
+nav#main_nav li:hover {
+  background-color: thistle;
+}
+
+section#content {
+  font-size: 80px;
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase; /* text를 전부 대문자로 표현하라 */
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+section#content article {
+  height: 100vh;
+  /* 
+        화면에 box를 표현할때 width, height 등을 사용한다. 보통은 %, px 단위를 사용했다.
+        width값은 100% 등 % 단위의 설정이 쉽다.
+        height값은 % 단위의 설정이 다소 까다로웠다.
+        vh, wh 라는 단위가 나오면서 %단위의 단점을 보완 하고 있다.
+        vh : view port height 에 비례
+        wh : view port width 의 비례
+        화면의 해상도와 관계없이 보이는 화면 그대로의 모습에 비례     
+    */
+  height: 100vh;
+  /*
+        글자(text)의 height를 view port 100%로 설정
+        text-aligh 가로방향 정렬
+        vertical-align : 세로방향 정렬
+        text의 font, style에 따라서 상당히 불편한 설정이 된다.
+
+        세로방향으로 text를 중앙에 위치하기가 상당히 번거로운 작업이 필요했다.
+        box의 중앙에 한 라인의 text를 위치하고 싶을때
+    */
+  line-height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+}
+article#art1 {
+  background: url("../images/image_1.jpg") no-repeat;
+}
+article#art2 {
+  background: url("../images/image_2.jpg") no-repeat;
+}
+article#art3 {
+  background: url("../images/image_3.jpg") no-repeat;
+}
+article#art4 {
+  background: url("../images/image_4.jpg") no-repeat;
+}
+article#art5 {
+  background: url("../images/image_5.jpg") no-repeat;
+}
+article#art6 {
+  background: url("../images/image_1.jpg") no-repeat;
+}
+@media screen and (max-width: 700px) {
+  section#content {
+    font-weight: 400;
+    font-size: 40px;
+  }
+}
