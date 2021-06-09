@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      p {
+        padding: 5px;
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      input {
+        width: 80%;
+        padding: 8px;
+        margin: 5px;
+        outline: 0;
+        border: 1px solid greenyellow;
+        border-radius: 5px;
+      }
+      input:hover {
+        background-color: #bbb;
+      }
+
+      button {
+        width: 200px;
+        background-color: hotpink;
+        outline: 0;
+        border: 0;
+        border-radius: 5px;
+        padding: 10px 0;
+      }
+      button:hover {
+        background-color: indianred;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 80%;
+        margin: 10px auto;
+      }
+      table th,
+      td {
+        border: 1px solid saddlebrown;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <input type="text" name="p_name" id="p_name" placeholder="ex) 홍길동" />
+    </p>
+    <!-- name은 스프링이 가져갈때, id는 스크립트에서-->
+    <p>
+      <input
+        type="text"
+        name="p_tel"
+        id="p_tel"
+        placeholder="ex) 010-1234-5678"
+      />
+    </p>
+    <p>
+      <input
+        type="tel"
+        name="p_addr"
+        id="p_addr"
+        placeholder="ex) 서울특별시 강남구 부럽동"
+      />
+    </p>
+    <p><button class="btn_ok">OK</button></p>
+    <table>
+      <tr>
+        <th>이름</th>
+        <th>전화번호</th>
+        <th>주소</th>
+      </tr>
+    </table>
+  </body>
+  <script>
+    const doc = document;
+    const table = doc.querySelector("table");
+
+    doc.querySelector("button.btn_ok").addEventListener("click", (e) => {
+      let p_name = doc.querySelector("input#p_name");
+      let p_tel = doc.querySelector("input#p_tel");
+      let p_addr = doc.querySelector("input#p_addr");
+
+      let datas = [p_name.value, p_tel.value, p_addr.value];
+
+      let tr = doc.createElement("tr");
+      for (data in datas) {
+        let td = doc.createElement("td");
+        td.innerHTML = datas[data];
+        tr.appendChild(td);
+      }
+      table.appendChild(tr);
+      p_name.value = "";
+      p_tel.value = "";
+      p_addr.value = "";
+    });
+  </script>
+</html>

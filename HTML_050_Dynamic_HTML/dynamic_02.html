@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic HTML</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 10px auto;
+      }
+
+      table td {
+        border: 1px solid blue;
+      }
+      table tr {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <!-- <tr>
+        <td>이름</td>
+        <td>전화번호</td>
+        <td>주소</td>
+      </tr>
+      <tr>
+        <td>홍길동</td>
+        <td>010-715-4875</td>
+        <td>서울특별시</td>
+      </tr> -->
+    </table>
+  </body>
+  <script>
+    const doc = document;
+    let body = document.querySelector("body");
+
+    let table = document.createElement("table");
+    let tr1 = doc.createElement("tr");
+
+    let td1 = doc.createElement("td");
+    td1.innerHTML = "이름";
+    tr1.appendChild(td1);
+
+    let td2 = doc.createElement("td");
+    tr1.appendChild(td2);
+    td2.innerHTML = "전화번호";
+
+    let td3 = doc.createElement("td");
+    td3.innerHTML = "주소";
+    tr1.appendChild(td3);
+
+    let tr2 = doc.createElement("tr");
+
+    let td4 = doc.createElement("td");
+    td4.innerHTML = "홍길동";
+    tr2.appendChild(td4);
+
+    let td5 = doc.createElement("td");
+    td5.innerHTML = "010-715-4875";
+    tr2.appendChild(td5);
+
+    let td6 = doc.createElement("td");
+    td6.innerHTML = "서울특별시";
+    tr2.appendChild(td6);
+
+    table.appendChild(tr1);
+    table.appendChild(tr2);
+    body.appendChild(table);
+
+    // js 배열을 사용
+    const title = ["이름", "전화번호", "주소"];
+    const data = ["홍길동", "010", "서울시"];
+
+    let table1 = doc.createElement("table");
+    let tr1 = doc.createElement("tr");
+    for (let i = 0; i < title.length; i++) {
+      let td = doc.createElement("td");
+      td = titles[i];
+      tr1.appendChild(td);
+    }
+    tabl1.appendChild(tr1);
+
+    doc.querySelector("body").appendChild(table1);
+  </script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        border: 1px solid greenyellow;
+        width: 80%;
+        margin: 10px auto;
+      }
+
+      table td {
+        border: 1px solid skyblue;
+      }
+    </style>
+  </head>
+  <body></body>
+  <script>
+    const datas = [
+      ["이름", "전화번호", "주소"],
+      ["최간지", "017-146-1541", "서울시"],
+      ["최남자", "018-444-7845", "부산시"],
+      ["최멋짐", "016-154-4787", "광주시"],
+    ];
+
+    let table = document.createElement("table");
+    for (let i = 0; i < datas.length; i++) {
+      // 바깥쪽 배열만큼 반복
+      let tr = document.createElement("tr"); // row 개수만큼 tr을 반복생성
+      for (let j = 0; j < datas[i].length; j++) {
+        // 안쪽 배열만큼 반복
+        let td = document.createElement("td"); // 배열개수만큼 td를 반복생성하면서
+        td.innerHTML = datas[i][j]; // 각배열의 요소에 저장된 문자열을 setting
+        tr.appendChild(td); // tr추가
+      }
+      table.appendChild(tr); // 생성된 tr을 table에 추가
+    }
+    document.querySelector("body").appendChild(table); // table을 body 추가
+  </script>
+</html>
