@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>image slide</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+      }
+      /* 이 페이지에서 사용할 애니메이션을 선언 */
+      @keyframes myslide {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(calc(-500px * 5));
+        }
+      }
+
+      div.main {
+        width: 500px;
+        height: 500px;
+        border: 1px solid sandybrown;
+        margin: 20px auto;
+      }
+
+      div.main div.mask {
+        border: 1px solid aquamarine;
+        height: 400px;
+        overflow: hidden;
+      }
+
+      div.main div.images {
+        border: 1px solid deeppink;
+        display: flex;
+
+        animation: myslide 10s linear;
+      }
+      div.main div.images img {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="mask">
+        <div class="images">
+          <img src="../HTML_060_slide/images/image_1.jpg" alt="" />
+          <img src="../HTML_060_slide/images/image_2.jpg" alt="" />
+          <img src="../HTML_060_slide/images/image_3.jpg" alt="" />
+          <img src="../HTML_060_slide/images/image_4.jpg" alt="" />
+          <img src="../HTML_060_slide/images/image_5.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
